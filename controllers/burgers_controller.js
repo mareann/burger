@@ -13,21 +13,18 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log("controller: router.get / res.render index hbsObject "+JSON.stringify(hbsObject));
-
+  console.log("controller: router.get / res.render index hbsObject "+JSON.stringify(hbsObject));
     res.render("index", hbsObject);
   });
 });
 
 
 router.post("/api/burgers", function(req, res) {
-    console.log("controller: router.post /api/burgers");
-  burger.insertOne([
-    "burger_name", "devoured"
-  ], [
-    req.body.burger_name, req.body.devoured
-  ], function(result) {
-     console.log("controller: send back res.json "+result.insertId)
+console.log("controller: router.post /api/burgers");
+  burger.insertOne(
+  	["burger_name", "devoured"], 
+    [req.body.burger_name, req.body.devoured], function(result) {
+console.log("controller: send back res.json "+result.insertId)
     // Send back the ID of the new 
     res.json({ id: result.insertId });
   });
