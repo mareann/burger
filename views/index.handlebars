@@ -1,11 +1,11 @@
 <h1>Hamburger Time!</h1>
 
 <h2>Burgers that are ready!</h2>
-
+{{!comment here }}
 <ul>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{burger}}
+   {{#unless this.devoured}}
+      {{> burgers/burger-block devoured=false}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -13,11 +13,16 @@
 <h2>Burgers that are devoured!</h2>
 
 <ul>
+<ul>
   {{#each burgers}}
-    {{#if devoured}}
-      {{burger}}
-    {{/if}}
+   {{#if this.devoured}}
+     <li>
+      {{this.burger_name}}
+     </li>
+   {{/if}}
   {{/each}}
+</ul>
+
 </ul>
 
 <h2>Add a Burger</h2>

@@ -27,11 +27,11 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller.js");
 
 app.use('/',routes);
-app.use(function(req,res,next){
-	var err = new Error('not found');
+/*app.use(function(req,res,next){
+	var err = new Error("server: "+routes+" not found");
 	err.status = 404;
 	next(err);
-});
+});*/
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

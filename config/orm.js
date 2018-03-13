@@ -48,7 +48,7 @@ var orm = {
   selectAll: function(tableInput, cb) {                          //all
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
-console.log("orm selectAll: result "+result)
+console.log("orm selectAll: result "+JSON.stringify(result))
       if (err) {
         throw err;
       }
@@ -95,5 +95,6 @@ console.log("orm selectAll: result "+result)
   }
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm object for the model (burger.js).
 module.exports = orm;
+
