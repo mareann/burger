@@ -1,6 +1,7 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
+console.log("orm.js connection=../config/connection.js")
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
@@ -48,7 +49,7 @@ var orm = {
   selectAll: function(tableInput, cb) {                          //all
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
-console.log("orm selectAll: result "+JSON.stringify(result))
+console.log("-----------orm selectAll: result "+JSON.stringify(result))
       if (err) {
         throw err;
       }
@@ -65,13 +66,13 @@ console.log("orm selectAll: result "+JSON.stringify(result))
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
+    console.log("---------orm.js insertOne: "+queryString+" vals "+vals);
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
         throw err;
       }
-
+console.log("-----------orm.js insertOne: result "+JSON.stringify(result))
       cb(result);
     });
   },
@@ -84,17 +85,18 @@ console.log("orm selectAll: result "+JSON.stringify(result))
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
+console.log("---------orm.js updateOne: "+queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
-
+console.log("-----------orm updateOne: result "+JSON.stringify(result))
       cb(result);
     });
   }
 };
 
+console.log("orm.js export orm")
 // Export the orm object for the model (burger.js).
 module.exports = orm;
 

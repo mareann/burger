@@ -1,0 +1,13 @@
+li.readyToEat {
+  padding: .5em;
+  margin: .25em;
+  width: 50%;
+  background: orange;
+}
+
+li.devouredBurger {
+	padding: .15em;
+	margin: .15em;
+}
+
+

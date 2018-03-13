@@ -8,7 +8,7 @@ var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  console.log("controller: router.get /");
+  console.log("-------------controller: router.get / burger.selectAll");
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
@@ -20,7 +20,7 @@ router.get("/", function(req, res) {
 
 
 router.post("/api/burgers", function(req, res) {
-console.log("controller: router.post /api/burgers");
+console.log("-------------controller: router.post /api/burgers burger.insertOne");
   burger.insertOne(
   	["burger_name", "devoured"], 
     [req.body.burger_name, req.body.devoured], function(result) {
@@ -32,15 +32,15 @@ console.log("controller: send back res.json "+result.insertId)
 
 
 router.put("/api/burgers/:id", function(req, res) {
-    console.log("controller: router.put /api/burgers:id "+req.params.id);
+    console.log("------------controller: router.put /api/burgers:id "+req.params.id);
   var condition = "id = " + req.params.id;
 
-  console.log("controller: router.put /api/burgers update devoured ", condition);
+  //console.log("controller: router.put /api/burgers update devoured ", condition);
 
   burger.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
-  console.log("controller: burger.update devoured "+req.body.devoured);
+  console.log("controller: burger.updateOne devoured "+req.body.devoured);
 
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
