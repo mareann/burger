@@ -1,13 +1,25 @@
 li.readyToEat {
   padding: .5em;
   margin: .25em;
-  width: 50%;
+  width: 30%;
   background: orange;
+  border: solid orange;
+  border-radius: 10em;
 }
 
 li.devouredBurger {
 	padding: .15em;
 	margin: .15em;
 }
+/*
+div#readyBurgers {
+	background-color: lightyellow;
+}*/
 
+h1 {
+	text-align: center;
+}
 
+ul {
+	list-style-type: none;
+}
