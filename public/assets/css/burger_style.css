@@ -16,10 +16,25 @@ div#readyBurgers {
 	background-color: lightyellow;
 }*/
 #devourList {
-	   background-image: url("../img/trash.png");
-	   padding: 1em;
+  background-image: url("../img/trash.png");
+  padding: 1em;
+}
+#trashBurger img {
+	padding-right:5em;
 }
 
+.devour-burger {
+	background-color: pink;
+}
+
+.devour-burger:hover {
+   background-color: red;
+}
+/*
+#makeBurger {
+  background-image: url("../img/chef.png");
+
+}*/
 /*.devouredBurger {
     position: absolute;
     top: 1em;
