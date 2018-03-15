@@ -8,7 +8,10 @@ $(function() {
     var newDevourState = {
       devoured: true
     };
-
+    
+    var newText = $(this).burger_name; 
+    $(".devouredBurger").text += newText;
+console.log("=============.devour text"+newText+" "+$(".devouredBurger").text)
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",

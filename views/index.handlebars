@@ -12,14 +12,7 @@
         </div>
         <button type="submit">Add Burger</button>
       </form>
-    </div>
-    <div class="col-sm-2">
-      <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
-    </div>
-  </div>
-
-  <div class="row">
-    <div id="readyBurgers" class="col-sm-5">
+    <div id="readyBurgers">
       <h2>Burgers that are ready!</h2>
       {{!comment here }}
       <ul>
@@ -30,17 +23,19 @@
         {{/each}}
       </ul>
     </div>
+
+    </div>
     <div class="col-sm-2">
       <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
       <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
       <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
       <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
+      <img id="burger-header-img" class="img-responsive center-block" src="assets/img/burger.png"/>
     </div>
-    <div class="col-sm-5" style="background-color:lavenderblush;">
+    <div id="devourBurger" class="col-sm-5">
       <h2>Burgers that are devoured!</h2>
-            <img id="burger-header-img" class="img-responsive center-block" src="assets/img/trash.png"/>
-      <ul>
-        {{#each burgers}}
+      <ul id="devourList">
+       {{#each burgers}}
           {{#if this.devoured}}
             <li class="devouredBurger">
               {{this.burger_name}}
