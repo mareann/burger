@@ -29,6 +29,13 @@ console.log("=============.devour text"+newText+" "+$(".devouredBurger").text)
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 console.log("-----------js/burgers.js: .create-form")
+
+    if ( $("#ca").val().trim() == "" )
+    {
+      //alert("no value entered");
+      return;
+    }
+
     var newBurger = {
       burger_name: $("#ca").val().trim(),
       devoured: 0

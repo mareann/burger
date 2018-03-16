@@ -4,21 +4,27 @@ li.readyToEat {
   border-radius: 10em;
   font-weight: bold;
   height: 8em;
-
   background-image: url("../img/burgerSmall.png");
 }
 
 li.devouredBurger {
 	padding: .15em;
-	margin: .15em;
+  margin: .15em;
 }
-/*
-div#readyBurgers {
-	background-color: lightyellow;
-}*/
+
 #devourList {
   background-image: url("../img/trash.png");
   padding: 1em;
+}
+
+#ca {
+  margin-top: 1em;
+  margin-left: 4em;
+}
+
+.submit {
+  margin-left: 4em;
+  margin-bottom: 1em;
 }
 #trashBurger img {
 	padding-right:5em;
@@ -26,24 +32,27 @@ div#readyBurgers {
 
 .devour-burger {
 	background-color: pink;
+  float: right;
+  padding: 0 2em;
+  margin-top: 2em;
+  margin-right: 4em;
 }
 
 .devour-burger:hover {
    background-color: red;
 }
-/*
-#makeBurger {
-  background-image: url("../img/chef.png");
-
-}*/
-/*.devouredBurger {
-    position: absolute;
-    top: 1em;
-    left: 2em;
-}*/
 
 h1 {
 	text-align: center;
+  background-color: #eccf98;
+  padding: .75em;
+}
+
+h2 {
+  text-align: center;
+  background-color: #eccf98;
+  border-radius: 5em;
+  padding: .25em;
 }
 
 ul {
