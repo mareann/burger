@@ -1,11 +1,16 @@
+/////////////////////////////////////////////////////////
+// config / orm.js
+// 
+/////////////////////////////////////////////////////////
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
 console.log("orm.js connection=../config/connection.js")
+
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
-// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
+// The helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
 // ["?", "?", "?"].toString() => "?,?,?";
 function printQuestionMarks(num) {
   var arr = [];
@@ -40,6 +45,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+// orm methods
 //     * `selectAll()`
 //     * `insertOne()`
 //     * `updateOne()`
@@ -49,7 +55,7 @@ var orm = {
   selectAll: function(tableInput, cb) {                          //all
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
-console.log("-----------orm selectAll: result "+JSON.stringify(result))
+console.log("-----------orm selectAll: result "); //+JSON.stringify(result))
       if (err) {
         throw err;
       }
@@ -72,7 +78,7 @@ console.log("-----------orm selectAll: result "+JSON.stringify(result))
       if (err) {
         throw err;
       }
-console.log("-----------orm.js insertOne: result "+JSON.stringify(result))
+//console.log("-----------orm.js insertOne: result "); //+JSON.stringify(result))
       cb(result);
     });
   },
@@ -90,7 +96,7 @@ console.log("---------orm.js updateOne: "+queryString);
       if (err) {
         throw err;
       }
-console.log("-----------orm updateOne: result "+JSON.stringify(result))
+//console.log("-----------orm updateOne: result "); //+JSON.stringify(result))
       cb(result);
     });
   }
@@ -99,4 +105,3 @@ console.log("-----------orm updateOne: result "+JSON.stringify(result))
 console.log("orm.js export orm")
 // Export the orm object for the model (burger.js).
 module.exports = orm;
-

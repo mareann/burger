@@ -8,12 +8,12 @@ var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
-  console.log("-------------controller: router.get / burger.selectAll");
+  console.log("-------------controller: router.get / burger.selectAll render index");
   burger.selectAll(function(data) {
     var hbsObject = {
       burgers: data
     };
-  console.log("controller: router.get / res.render index hbsObject "+JSON.stringify(hbsObject));
+//  console.log("controller: router.get / res.render index hbsObject "+JSON.stringify(hbsObject));
     res.render("index", hbsObject);
   });
 });

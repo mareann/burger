@@ -17,15 +17,35 @@ li.devouredBurger {
   padding: 1em;
 }
 
-#ca {
-  margin-top: 1em;
-  margin-left: 4em;
+label.form-control-feedback {
+  position: relative;
+  width: auto;
+}
+
+.form-group {
+  text-align: center;
 }
 
 .submit {
-  margin-left: 4em;
+  position: relative;
+  left: 33%;
   margin-bottom: 1em;
+  font-weight: 700;
+  border-width: .2em;
+  border-style: outset;
+  border-color: buttonface;
+  padding: .5em 1em .5em;
+  background-color: pink;
 }
+
+input {
+  padding: .3em;
+}
+
+.submit:hover {
+  background-color: red;
+}
+
 #trashBurger img {
 	padding-right:5em;
 }
