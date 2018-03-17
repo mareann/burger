@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////
 // config / orm.js
-// 
+// exports orm
+// requires config/connection.js for database access 
 /////////////////////////////////////////////////////////
 // Import MySQL connection.
 var connection = require("../config/connection.js");
@@ -49,13 +50,12 @@ function objToSql(ob) {
 //     * `selectAll()`
 //     * `insertOne()`
 //     * `updateOne()`
-
 // Object for all our SQL statement functions.
 var orm = {
   selectAll: function(tableInput, cb) {                          //all
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
-console.log("-----------orm selectAll: result "); //+JSON.stringify(result))
+console.log("-- orm selectAll: result "); //+JSON.stringify(result))
       if (err) {
         throw err;
       }
@@ -72,7 +72,7 @@ console.log("-----------orm selectAll: result "); //+JSON.stringify(result))
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log("---------orm.js insertOne: "+queryString+" vals "+vals);
+    console.log("-- orm.js insertOne: "+queryString+" vals "+vals);
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
@@ -91,7 +91,7 @@ console.log("-----------orm selectAll: result "); //+JSON.stringify(result))
     queryString += " WHERE ";
     queryString += condition;
 
-console.log("---------orm.js updateOne: "+queryString);
+    console.log("-- orm.js updateOne: "+queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

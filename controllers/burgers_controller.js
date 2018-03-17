@@ -1,4 +1,10 @@
+/////////////////////////////////////////////////////////
 // controllers/ burgers_controller.js
+// routers retrieve data from database and render it to page
+// exports router
+// requires express and models/burger.js
+///////////////////////////////////////////////////////////
+
 var express = require("express");
 
 var router = express.Router();
@@ -50,9 +56,5 @@ router.put("/api/burgers/:id", function(req, res) {
     }
   });
 });
-/*
-router.get('/burgers', function(req, res) {
-	res.redirect('/');
-});*/
 
 module.exports = router;

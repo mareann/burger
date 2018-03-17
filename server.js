@@ -1,7 +1,13 @@
+/////////////////////////////////////////////////////////
+// server.js
+// setup handlebars
+// monitor port
+// exports orm
+// requires express, body-parser, express-handlebars,
+// controllers/burgers_controller.js
+/////////////////////////////////////////////////////////
 var express = require("express");
 var bodyParser = require("body-parser");
-//var exphbs = require("express-handlebars");
-//var path = require('path');
 
 var PORT = process.env.PORT || 8080;
 
@@ -11,9 +17,8 @@ var app = express();
 app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.text());
+
 // parse application/json
 app.use(bodyParser.json());
 
